@@ -1,0 +1,1263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unisource · Design Studio Field Guide</title>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#4D4642"/>
+  <circle cx="100" cy="88" r="34" fill="none" stroke="#A9A7AC" stroke-width="5"/>
+  <text x="100" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-style="italic" font-size="44" fill="#C1D72F">u</text>
+  <text x="100" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="14" fill="#F5F4F2" letter-spacing="2">UNISOURCE</text>
+  <text x="100" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="10" fill="#A9A7AC" letter-spacing="3">DESIGN STUDIO</text>
+</svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F5F4F2;
+  --bg-2:#ECEAE6;
+  --ink:#4D4642;
+  --ink-2:#6B6560;
+  --ink-3:#A9A7AC;
+  --line:#E3E1DC;
+  --line-2:#CFCCC6;
+  --accent:#C1D72F;
+  --accent-ink:#8FA520;
+  --accent-soft:#EEF3D0;
+  --dark:#4D4642;
+  --dark-2:#3A3430;
+  --paper:#FFFFFF;
+  --shadow: 0 1px 2px rgba(26,26,26,.04), 0 8px 24px -12px rgba(26,26,26,.08);
+  --shadow-lg: 0 1px 2px rgba(26,26,26,.05), 0 24px 60px -20px rgba(26,26,26,.14);
+  --serif: 'Instrument Serif', Georgia, serif;
+  --sans: 'Inter', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+a{color:inherit}
+img{max-width:100%;display:block}
+
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+@media(max-width:720px){.wrap{padding:0 20px}}
+
+/* --- TOPBAR --- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(247,245,242,.86);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 32px;
+}
+.wordmark{
+  display:flex;align-items:center;gap:12px;
+  font-weight:600;letter-spacing:-.01em;font-size:14px;
+}
+.wordmark em{color:var(--ink-3);font-style:normal;margin:0 2px}
+.wordmark-logo{height:32px;width:auto;display:block}
+.wordmark-sep{height:22px;width:1px;background:var(--line-2);display:inline-block}
+.wordmark-label{color:var(--ink-2);font-weight:500;font-size:13px;letter-spacing:.01em}
+.foot .wordmark-sep{background:rgba(255,255,255,.18)}
+.foot .wordmark-label{color:rgba(245,244,242,.7)}
+.w-block{
+  width:22px;height:22px;
+  border-radius:50%;
+  border:2.5px solid var(--ink-3);
+  display:inline-flex;align-items:center;justify-content:center;
+  position:relative;
+  flex-shrink:0;
+}
+.w-block::after{
+  content:'u';
+  font-family:var(--sans);font-weight:800;
+  color:var(--accent);
+  font-size:14px;line-height:1;
+  font-style:italic;
+  letter-spacing:-.02em;
+  margin-top:1px;
+}
+.topbar-meta{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;
+  color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em;
+}
+.topbar-sep{opacity:.4}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+@media(max-width:720px){.topbar-meta{display:none}}
+
+/* --- HERO --- */
+.hero{padding:84px 0 52px;border-bottom:1px solid var(--line)}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;text-transform:uppercase;
+  letter-spacing:.14em;color:var(--ink-3);
+  padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--paper);
+  margin-bottom:32px;
+}
+.eyebrow-dot{width:8px;height:8px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 3px var(--accent-soft)}
+
+.display{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(40px, 6.2vw, 88px);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  margin:0 0 28px;
+  max-width:18ch;
+  text-wrap:balance;
+}
+.display em{font-style:italic;color:var(--ink);position:relative}
+.display em::after{content:'';position:absolute;left:0;right:0;bottom:0.08em;height:0.18em;background:var(--accent);z-index:-1;opacity:.65}
+
+.lede{
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.6;
+  color:var(--ink-2);
+  max-width:62ch;
+  margin:0 0 32px;
+  text-wrap:pretty;
+}
+
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:64px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 22px;border-radius:999px;
+  font-weight:500;font-size:14px;text-decoration:none;
+  transition:transform .12s ease, background .15s ease, border-color .15s ease;
+  cursor:pointer;border:1px solid transparent;
+  font-family:var(--sans);
+}
+.btn-primary{background:var(--ink);color:#fff}
+.btn-primary:hover{background:var(--dark-2);transform:translateY(-1px)}
+.btn-primary::after{content:'→';color:var(--accent);margin-left:2px;font-weight:600}
+.btn-ghost{border-color:var(--line-2);color:var(--ink)}
+.btn-ghost:hover{background:var(--paper);border-color:var(--ink-3)}
+
+.hero-marquee{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
+  margin-top:12px;
+  overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);
+}
+.marquee-track{
+  display:flex;gap:28px;
+  font-family:var(--mono);font-size:12px;
+  color:var(--ink-2);text-transform:uppercase;letter-spacing:.12em;
+  white-space:nowrap;
+  animation:marq 50s linear infinite;
+  width:max-content;
+}
+.marquee-track span:nth-child(even){color:var(--ink-3)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* --- SECTIONS --- */
+.section{padding:88px 0;border-bottom:1px solid var(--line)}
+.section-head{
+  display:grid;
+  grid-template-columns:80px 1fr;
+  gap:32px;margin-bottom:56px;
+  align-items:start;
+}
+.section-num{
+  font-family:var(--mono);font-size:11px;
+  color:var(--ink-3);letter-spacing:.14em;
+  padding-top:10px;
+  border-top:1px solid var(--ink);
+  width:40px;
+}
+.h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(32px,4vw,56px);
+  line-height:1.04;letter-spacing:-.02em;
+  margin:0 0 14px;max-width:22ch;text-wrap:balance;
+}
+.sub{
+  font-size:17px;color:var(--ink-2);
+  margin:0;max-width:58ch;
+}
+@media(max-width:720px){
+  .section{padding:64px 0}
+  .section-head{grid-template-columns:1fr;gap:16px;margin-bottom:36px}
+}
+
+/* --- ROLE TABS --- */
+.role-tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;border:1px solid var(--line-2);border-radius:14px;
+  background:var(--paper);overflow:hidden;
+  margin-bottom:24px;
+}
+.role-tab{
+  text-align:left;padding:22px 26px;
+  background:transparent;border:0;cursor:pointer;
+  border-right:1px solid var(--line);
+  transition:background .15s ease;
+  font-family:var(--sans);
+}
+.role-tab:last-child{border-right:0}
+.role-tab:hover{background:var(--bg-2)}
+.role-tab.is-active{background:var(--ink);color:var(--bg)}
+.role-tab-k{
+  font-family:var(--mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-bottom:6px;
+}
+.role-tab.is-active .role-tab-k{color:rgba(247,245,242,.55)}
+.role-tab-v{
+  font-family:var(--serif);font-size:28px;
+  letter-spacing:-.01em;line-height:1;
+}
+@media(max-width:720px){
+  .role-tabs{grid-template-columns:1fr;}
+  .role-tab{border-right:0;border-bottom:1px solid var(--line)}
+  .role-tab:last-child{border-bottom:0}
+  .role-tab-v{font-size:22px}
+}
+
+.role-panels{position:relative;min-height:320px}
+.role-panel{
+  display:none;
+  animation:fadeUp .4s ease both;
+}
+.role-panel.is-active{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.role-list{
+  list-style:none;padding:0;margin:24px 0 0;
+  display:grid;grid-template-columns:repeat(2,1fr);gap:0;
+  border-top:1px solid var(--line);
+}
+.role-list li{
+  padding:22px 24px 22px 0;
+  border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:28px auto 1fr;
+  align-items:baseline;gap:14px;
+}
+.role-list li:nth-child(odd){padding-right:40px;border-right:1px solid var(--line)}
+.role-list li:nth-child(odd){padding-left:0}
+.role-list li:nth-child(even){padding-left:40px}
+.ri{color:var(--accent);font-family:var(--mono);font-size:14px}
+.role-list b{font-weight:600;font-size:16px;white-space:nowrap}
+.rd{color:var(--ink-2);font-size:15px;line-height:1.5}
+@media(max-width:820px){
+  .role-list{grid-template-columns:1fr}
+  .role-list li,.role-list li:nth-child(odd),.role-list li:nth-child(even){
+    padding:18px 0;border-right:0;
+    grid-template-columns:24px 1fr;
+  }
+  .role-list li b{grid-column:2;white-space:normal}
+  .role-list li .rd{grid-column:2}
+  .ri{grid-row:span 2}
+}
+
+/* --- EXAMPLES --- */
+.example-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+@media(max-width:980px){.example-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.example-grid{grid-template-columns:1fr}}
+
+.example{
+  background:var(--paper);
+  border:1px solid var(--line);border-radius:16px;
+  overflow:hidden;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  display:flex;flex-direction:column;
+}
+.example:hover{
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-lg);
+  border-color:var(--line-2);
+}
+.example-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 18px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ink-3);
+}
+.ex-tag{color:var(--ink);font-weight:600}
+.ex-tag::before{content:'';display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:6px;vertical-align:middle;transform:translateY(-1px)}
+
+.example-stage{
+  aspect-ratio:4/3;
+  position:relative;overflow:hidden;
+  background:var(--bg-2);
+}
+.example-cap{padding:18px 18px 22px}
+.example-cap h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:24px;letter-spacing:-.01em;
+  margin:0 0 6px;
+}
+.example-cap p{
+  font-size:14px;color:var(--ink-2);margin:0;line-height:1.5;
+}
+
+/* Deck stage */
+.deck-stage{background:var(--dark);color:#F5F4F2}
+.deck-slide{
+  position:absolute;inset:0;padding:28px;
+  opacity:0;transition:opacity .4s ease;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.deck-slide.is-active{opacity:1}
+.deck-brand{font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:var(--accent);font-weight:500}
+.deck-brand-mark{display:inline-flex;align-items:center;gap:8px}
+.deck-brand-mark i{width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(193,215,47,.5);display:inline-flex;align-items:center;justify-content:center;font-style:italic;font-weight:800;color:var(--accent);font-size:9px;line-height:1}
+.deck-title{
+  font-family:var(--serif);font-size:36px;line-height:1;letter-spacing:-.02em;
+}
+.deck-title .accent{color:var(--accent);font-style:italic;font-weight:500}
+.deck-meta{font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:.14em;text-transform:uppercase}
+.deck-h{font-family:var(--serif);font-size:28px;letter-spacing:-.02em;margin-bottom:20px}
+.deck-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.deck-stat{border-top:1px solid rgba(255,255,255,.15);padding-top:10px}
+.deck-stat b{font-family:var(--serif);font-size:30px;display:block;line-height:1;color:var(--accent)}
+.deck-stat span{font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.14em}
+.deck-phases{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.deck-phases>div{display:flex;flex-direction:column;gap:4px}
+.deck-phases i{display:block;height:3px;background:var(--accent);width:60%;border-radius:2px}
+.deck-phases b{font-size:13px;font-weight:600;color:#F5F4F2}
+.deck-phases span{font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.1em}
+
+.deck-dots{
+  position:absolute;bottom:14px;left:50%;transform:translateX(-50%);
+  display:flex;gap:6px;z-index:2;
+}
+.dot-btn{
+  width:18px;height:4px;border-radius:2px;
+  background:rgba(245,244,242,.25);border:0;cursor:pointer;
+  transition:background .2s;
+}
+.dot-btn.is-active{background:var(--accent)}
+
+/* Finish stage */
+.finish-stage{padding:20px;display:flex;flex-direction:column;background:var(--paper)}
+.finish-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:14px;
+}
+.finish-head b{font-family:var(--serif);font-size:20px}
+.finish-head span{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em}
+.swatches{
+  flex:1;display:grid;grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr);gap:6px;
+}
+.sw{
+  border-radius:6px;position:relative;overflow:hidden;
+  display:flex;align-items:flex-end;padding:8px;
+  cursor:pointer;transition:transform .18s ease;
+}
+.sw:hover{transform:scale(1.02)}
+.sw span{
+  font-family:var(--mono);font-size:9px;color:#fff;
+  background:rgba(0,0,0,.55);padding:3px 6px;border-radius:3px;
+  letter-spacing:.06em;
+}
+.sw[style*="E8DFD1"] span,
+.sw[style*="F0E7D6"] span{color:#1a1a1a;background:rgba(255,255,255,.7)}
+.scheme-switch{
+  display:flex;gap:4px;margin-top:12px;
+  padding:4px;background:var(--bg-2);border-radius:999px;
+  font-family:var(--mono);
+}
+.ss-opt{
+  flex:1;padding:6px 10px;background:transparent;border:0;
+  border-radius:999px;cursor:pointer;font-size:10px;
+  text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);
+  transition:background .18s;
+}
+.ss-opt.is-active{background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}
+
+/* Timeline stage */
+.timeline-stage{padding:20px;background:var(--paper);display:flex;flex-direction:column}
+.tl-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px}
+.tl-head b{font-family:var(--serif);font-size:20px}
+.tl-head span{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em}
+.tl-grid{flex:1;display:flex;flex-direction:column;gap:8px}
+.tl-row{
+  display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:center;
+}
+.tl-lbl{font-size:11px;color:var(--ink-2);font-weight:500}
+.tl-bar{
+  height:12px;border-radius:3px;position:relative;
+  background:var(--accent);
+  margin-left:calc(var(--s) * 1%);
+  width:calc((var(--e) - var(--s)) * 1%);
+  animation:barGrow .8s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes barGrow{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1)}}
+.tl-marks{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+  margin-top:10px;padding-left:102px;
+  font-family:var(--mono);font-size:9px;color:var(--ink-3);
+  letter-spacing:.12em;text-transform:uppercase;
+  border-top:1px solid var(--line);padding-top:6px;
+}
+
+/* Case study */
+.case-stage{display:grid;grid-template-rows:3fr 2fr;background:var(--paper)}
+.case-img{overflow:hidden;background:#3A3936;position:relative}
+.case-img-placeholder{
+  position:absolute;inset:0;
+  background:
+    repeating-linear-gradient(45deg,#44423E 0 8px,#3A3936 8px 16px);
+  display:flex;align-items:flex-end;padding:14px;
+}
+.case-img-placeholder span{
+  font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.55);
+  letter-spacing:.18em;
+}
+.case-body{padding:16px 20px}
+.case-eb{font-family:var(--mono);font-size:9px;color:var(--ink);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px;display:inline-block;background:var(--accent);padding:3px 7px;border-radius:3px}
+.case-h{font-family:var(--serif);font-size:22px;line-height:1.1;letter-spacing:-.01em;margin-bottom:10px}
+.case-stats{display:flex;gap:18px}
+.case-stats>div{display:flex;flex-direction:column}
+.case-stats b{font-family:var(--serif);font-size:20px;line-height:1}
+.case-stats span{font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+
+/* Storyboard */
+.story-stage{padding:20px;background:var(--paper);display:flex;flex-direction:column}
+.story-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.story-h b{font-family:var(--serif);font-size:20px}
+.story-h span{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em}
+.story-row{flex:1;display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.story-cell{display:flex;flex-direction:column;gap:4px}
+.sc-art{flex:1;border-radius:6px;min-height:60px}
+.story-cell b{font-size:13px;font-weight:600}
+.story-cell span{font-family:var(--mono);font-size:9px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.08em}
+
+/* Dashboard */
+.dash-stage{padding:20px;background:var(--paper);display:flex;flex-direction:column}
+.dash-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.dash-h b{font-family:var(--serif);font-size:20px}
+.dash-h span{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em}
+.dash-heat{
+  flex:1;display:grid;
+  grid-template-columns:repeat(14,1fr);
+  grid-template-rows:repeat(8,1fr);
+  gap:3px;
+}
+.dash-heat i{border-radius:2px;display:block}
+.dash-legend{
+  display:flex;gap:14px;margin-top:12px;
+  font-family:var(--mono);font-size:9px;color:var(--ink-3);
+  letter-spacing:.1em;text-transform:uppercase;
+}
+.dash-legend span{display:flex;align-items:center;gap:5px}
+.dash-legend i{width:10px;height:10px;border-radius:2px;display:block}
+
+/* --- FLOW --- */
+.flow{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-bottom:48px;
+}
+.flow-step{
+  padding:32px 28px 36px;border-right:1px solid var(--line);
+}
+.flow-step:last-child{border-right:0}
+.flow-n{
+  font-family:var(--mono);font-size:10px;
+  color:var(--ink-3);letter-spacing:.18em;
+  margin-bottom:18px;
+}
+.flow-step h3{
+  font-family:var(--serif);font-weight:400;
+  font-size:28px;letter-spacing:-.01em;
+  margin:0 0 10px;
+}
+.flow-step p{
+  color:var(--ink-2);font-size:15px;line-height:1.55;margin:0;
+  text-wrap:pretty;
+}
+@media(max-width:820px){
+  .flow{grid-template-columns:1fr}
+  .flow-step{border-right:0;border-bottom:1px solid var(--line)}
+  .flow-step:last-child{border-bottom:0}
+}
+
+/* Try card */
+.try-card{
+  background:var(--paper);border:1px solid var(--line-2);
+  border-radius:14px;overflow:hidden;
+}
+.try-head{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 18px;border-bottom:1px solid var(--line);
+  background:var(--bg-2);
+}
+.try-dot-row{display:flex;gap:5px}
+.tdot{width:9px;height:9px;border-radius:50%;background:var(--line-2)}
+.try-ttl{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--ink-3)}
+.try-body{padding:24px 28px}
+.try-label{
+  font-family:var(--mono);font-size:10px;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--ink-3);margin-bottom:12px;display:block;
+}
+.try-prompts{
+  display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;
+}
+.tp{
+  background:var(--bg-2);border:1px solid var(--line);
+  padding:10px 16px;border-radius:999px;
+  font-size:13px;cursor:pointer;font-family:var(--sans);
+  color:var(--ink);
+  transition:background .15s, border-color .15s, transform .15s;
+}
+.tp:hover{background:var(--paper);border-color:var(--ink-3);transform:translateY(-1px)}
+.tp.is-active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+.try-out{
+  background:var(--bg);border:1px dashed var(--line-2);
+  border-radius:10px;padding:22px;min-height:220px;
+  font-family:var(--mono);font-size:12px;line-height:1.7;
+  color:var(--ink-2);
+  position:relative;overflow:hidden;
+}
+.try-empty{color:var(--ink-3);text-align:center;padding:60px 0;font-family:var(--sans);font-size:14px}
+.try-out .typing::after{
+  content:'▋';color:var(--accent);animation:blink 1s steps(2) infinite;
+  margin-left:2px;
+}
+@keyframes blink{50%{opacity:0}}
+.try-out strong{color:var(--ink);font-family:var(--sans);font-weight:600;font-size:14px;display:block;margin-bottom:8px}
+.try-out .tag{color:var(--accent-ink)}
+
+/* --- BOUNDS --- */
+.bounds-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line-2);border-radius:14px;overflow:hidden;background:var(--paper)}
+.bounds-col{padding:36px 36px 40px}
+.bounds-yes{border-right:1px solid var(--line)}
+.bounds-no{background:var(--bg-2)}
+.bounds-k{
+  font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:20px;
+}
+.bounds-yes .bounds-k{color:var(--accent-ink)}
+.bounds-col ul{list-style:none;padding:0;margin:0}
+.bounds-col li{
+  padding:14px 0;border-bottom:1px solid var(--line);
+  font-size:15px;color:var(--ink);line-height:1.5;
+  position:relative;padding-left:22px;
+}
+.bounds-col li:last-child{border-bottom:0}
+.bounds-yes li::before{content:'✓';position:absolute;left:0;top:14px;color:var(--accent-ink);font-family:var(--sans);font-weight:700}
+.bounds-no li::before{content:'—';position:absolute;left:0;top:14px;color:var(--ink-3);font-family:var(--mono);font-weight:500}
+@media(max-width:720px){
+  .bounds-grid{grid-template-columns:1fr}
+  .bounds-yes{border-right:0;border-bottom:1px solid var(--line)}
+}
+
+/* --- CTA --- */
+.section-cta{background:var(--dark);color:#F5F4F2;border-bottom:0}
+.cta-card{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:end;
+}
+.cta-eb{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;display:inline-block;border-bottom:2px solid var(--accent);padding-bottom:4px}
+.cta-h{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(32px,3.6vw,52px);
+  letter-spacing:-.02em;line-height:1.05;
+  margin:0 0 20px;text-wrap:balance;
+}
+.cta-sub{color:rgba(245,244,242,.7);font-size:16px;line-height:1.55;max-width:54ch;margin:0;text-wrap:pretty}
+.cta-steps{display:flex;flex-direction:column;gap:14px}
+.cta-steps>div{
+  display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;
+  padding:18px 20px;border:1px solid rgba(255,255,255,.1);border-radius:10px;
+  background:rgba(255,255,255,.03);
+}
+.cta-steps b{
+  font-family:var(--serif);font-size:28px;color:var(--accent);
+  line-height:1;font-weight:400;
+}
+.cta-steps span{font-size:15px;color:rgba(245,244,242,.88);line-height:1.4}
+@media(max-width:820px){.cta-card{grid-template-columns:1fr;gap:32px}}
+
+/* --- FOOTER --- */
+.foot{background:var(--dark);color:rgba(245,244,242,.6);padding:40px 0 48px}
+.foot-inner{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-top:28px;border-top:1px solid rgba(255,255,255,.1)}
+.foot .wordmark{color:#F5F4F2}
+.foot .w-block{border-color:rgba(255,255,255,.45)}
+.foot-sm{font-size:13px;max-width:44ch;margin:14px 0 0;line-height:1.5}
+.foot-meta{display:flex;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.foot-meta-dim{margin-top:10px;opacity:.5}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="wordmark">
+      <img class="wordmark-logo" src="assets/unisource-logo.jpg" alt="Unisource Solutions">
+      <span class="wordmark-sep"></span>
+      <span class="wordmark-label">Design Studio · Field Guide</span>
+    </div>
+    <div class="topbar-meta">
+      <span class="dot"></span>
+      <span>Internal field guide</span>
+      <span class="topbar-sep">/</span>
+      <span>v1 · April 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      A new tool. An honest walkthrough.
+    </div>
+    <h1 class="display">
+      What if every account manager and&nbsp;designer had a
+      <em>junior designer and&nbsp;front-end developer</em>
+      on call — and they worked at the speed of typing?
+    </h1>
+    <p class="lede">
+      That's roughly what this is. You describe what you want. It builds a working version in HTML — clickable,
+      shareable, exportable to PowerPoint or PDF. You iterate until it's right. This page is itself an example of the output.
+    </p>
+    <div class="hero-actions">
+      <a href="#roles" class="btn btn-primary">See what it can do for your role</a>
+      <a href="#examples" class="btn btn-ghost">Skip to live examples ↓</a>
+    </div>
+
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Pitch decks</span><span>·</span>
+        <span>Finish boards</span><span>·</span>
+        <span>Case studies</span><span>·</span>
+        <span>Project timelines</span><span>·</span>
+        <span>RFP microsites</span><span>·</span>
+        <span>Mood boards</span><span>·</span>
+        <span>Dashboards</span><span>·</span>
+        <span>Playbooks</span><span>·</span>
+        <span>Comparison sheets</span><span>·</span>
+        <span>Onboarding flows</span><span>·</span>
+        <span>Portfolio pages</span><span>·</span>
+        <span>Event microsites</span><span>·</span>
+        <span>Pitch decks</span><span>·</span>
+        <span>Finish boards</span><span>·</span>
+        <span>Case studies</span><span>·</span>
+        <span>Project timelines</span><span>·</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROLE SWITCHER -->
+<section id="roles" class="section section-roles">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">01</div>
+      <div>
+        <h2 class="h2">Who's it for?</h2>
+        <p class="sub">Everyone on a client-facing team. The outputs just look different. Tap a role.</p>
+      </div>
+    </div>
+
+    <div class="role-tabs" role="tablist">
+      <button class="role-tab is-active" data-role="am" role="tab">
+        <div class="role-tab-k">For</div>
+        <div class="role-tab-v">Account Managers</div>
+      </button>
+      <button class="role-tab" data-role="dz" role="tab">
+        <div class="role-tab-k">For</div>
+        <div class="role-tab-v">Designers</div>
+      </button>
+      <button class="role-tab" data-role="ld" role="tab">
+        <div class="role-tab-k">For</div>
+        <div class="role-tab-v">Leadership & Ops</div>
+      </button>
+    </div>
+
+    <div class="role-panels">
+      <div class="role-panel is-active" data-role="am">
+        <ul class="role-list">
+          <li><span class="ri">→</span><b>Pitch decks</b><span class="rd">New business, QBRs, project kickoffs. Exports to editable PPTX.</span></li>
+          <li><span class="ri">→</span><b>Proposal one-pagers</b><span class="rd">Scope, phases, timeline, pricing — visualized, not a wall of text.</span></li>
+          <li><span class="ri">→</span><b>Interactive RFP responses</b><span class="rd">Replace the 40-page PDF with a clickable microsite reviewers actually finish.</span></li>
+          <li><span class="ri">→</span><b>Meeting leave-behinds</b><span class="rd">Recap what was discussed, visualized, sent before they're back at their desk.</span></li>
+          <li><span class="ri">→</span><b>Case study one-pagers</b><span class="rd">Turn DLR, PNC, Mission Wealth into a polished, branded share.</span></li>
+          <li><span class="ri">→</span><b>Client-facing project timelines</b><span class="rd">"Here's what the next 12 weeks look like." Shareable link, not a Gantt screenshot.</span></li>
+        </ul>
+      </div>
+      <div class="role-panel" data-role="dz">
+        <ul class="role-list">
+          <li><span class="ri">→</span><b>Mood &amp; concept boards</b><span class="rd">Drag swatches and inspiration, annotate, share with the client — the Miro use case, but shippable.</span></li>
+          <li><span class="ri">→</span><b>Finish schedule visualizations</b><span class="rd">Every workstation, private office, huddle, lounge — with the palette applied.</span></li>
+          <li><span class="ri">→</span><b>Space-type storyboards</b><span class="rd">"Here's how focus, collaborate, and lounge should feel." Before a single product is spec'd.</span></li>
+          <li><span class="ri">→</span><b>Interactive plan annotations</b><span class="rd">Click a zone on the floor plan, see what's specified, why.</span></li>
+          <li><span class="ri">→</span><b>Product comparison sheets</b><span class="rd">Side-by-side specs with imagery. Decisions in one view.</span></li>
+          <li><span class="ri">→</span><b>Portfolio &amp; POI pages</b><span class="rd">Polish a finished install for the website, social, or a trade show booth.</span></li>
+        </ul>
+      </div>
+      <div class="role-panel" data-role="ld">
+        <ul class="role-list">
+          <li><span class="ri">→</span><b>Internal tool prototypes</b><span class="rd">"What if we had a dashboard for…" — working mockup before IT touches it.</span></li>
+          <li><span class="ri">→</span><b>Onboarding materials</b><span class="rd">New-hire guides for AMs, designers, PMs — interactive, always up to date.</span></li>
+          <li><span class="ri">→</span><b>Workplace analytics visualizations</b><span class="rd">Occupancy studies and strategy findings, turned into something a C-suite will actually read.</span></li>
+          <li><span class="ri">→</span><b>Event &amp; trade show microsites</b><span class="rd">POI, HD Expo, NeoCon — a purpose-built landing page per event.</span></li>
+          <li><span class="ri">→</span><b>Visual playbooks</b><span class="rd">"Hybrid office 101," "Healthcare waiting rooms," distributed as interactive docs.</span></li>
+          <li><span class="ri">→</span><b>Team enablement</b><span class="rd">Process guides, templates, and "how we pitch" resources your teams actually use.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXAMPLES — the meat -->
+<section id="examples" class="section section-examples">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">02</div>
+      <div>
+        <h2 class="h2">Six things, actually built.</h2>
+        <p class="sub">Each card below is a real, working mini-artifact — the kind of thing you could ship to a client tomorrow. Hover to interact.</p>
+      </div>
+    </div>
+
+    <div class="example-grid">
+      <!-- 1. Pitch deck -->
+      <article class="example" data-ex="deck">
+        <div class="example-meta">
+          <span class="ex-tag">Account Managers</span>
+          <span class="ex-dur">~8 min to build</span>
+        </div>
+        <div class="example-stage deck-stage">
+          <div class="deck-slide" data-s="0">
+            <div class="deck-brand"><span class="deck-brand-mark"><i>u</i> UNISOURCE SOLUTIONS</span></div>
+            <div class="deck-title">Workplace strategy<br>for <span class="accent">PNC&nbsp;Bank</span></div>
+            <div class="deck-meta">Proposal · April 2026</div>
+          </div>
+          <div class="deck-slide" data-s="1">
+            <div class="deck-h">The agile office, at scale</div>
+            <div class="deck-stat-row">
+              <div class="deck-stat"><b>412k</b><span>sq ft in scope</span></div>
+              <div class="deck-stat"><b>9</b><span>regional offices</span></div>
+              <div class="deck-stat"><b>14wk</b><span>pilot to rollout</span></div>
+            </div>
+          </div>
+          <div class="deck-slide" data-s="2">
+            <div class="deck-h">Phased delivery</div>
+            <div class="deck-phases">
+              <div><i></i><b>Discover</b><span>Wks 1–3</span></div>
+              <div><i></i><b>Design</b><span>Wks 4–7</span></div>
+              <div><i></i><b>Pilot</b><span>Wks 8–10</span></div>
+              <div><i></i><b>Scale</b><span>Wks 11–14</span></div>
+            </div>
+          </div>
+          <div class="deck-dots">
+            <button class="dot-btn is-active" data-d="0"></button>
+            <button class="dot-btn" data-d="1"></button>
+            <button class="dot-btn" data-d="2"></button>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Client pitch deck</h3>
+          <p>16:9 slides, editable PowerPoint export, speaker notes auto-generated.</p>
+        </div>
+      </article>
+
+      <!-- 2. Finish board -->
+      <article class="example" data-ex="finish">
+        <div class="example-meta">
+          <span class="ex-tag">Designers</span>
+          <span class="ex-dur">~15 min</span>
+        </div>
+        <div class="example-stage finish-stage">
+          <div class="finish-head">
+            <b>Finish palette</b>
+            <span>Scheme A · Warm</span>
+          </div>
+          <div class="swatches">
+            <div class="sw" style="background:#C6A178"><span>Oak veneer</span></div>
+            <div class="sw" style="background:#3A3936"><span>Charcoal felt</span></div>
+            <div class="sw" style="background:#E8DFD1"><span>Linen wool</span></div>
+            <div class="sw" style="background:#8A6A4F"><span>Saddle leather</span></div>
+            <div class="sw" style="background:#94998E"><span>Sage laminate</span></div>
+            <div class="sw" style="background:#1F1E1B"><span>Black ash</span></div>
+          </div>
+          <div class="scheme-switch">
+            <button class="ss-opt is-active" data-sc="A">Warm</button>
+            <button class="ss-opt" data-sc="B">Cool</button>
+            <button class="ss-opt" data-sc="C">Neutral</button>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Finish &amp; material board</h3>
+          <p>Drag-and-drop swatches, multiple schemes, auto-generated finish schedule.</p>
+        </div>
+      </article>
+
+      <!-- 3. Timeline -->
+      <article class="example" data-ex="timeline">
+        <div class="example-meta">
+          <span class="ex-tag">Account Managers</span>
+          <span class="ex-dur">~5 min</span>
+        </div>
+        <div class="example-stage timeline-stage">
+          <div class="tl-head">
+            <b>Project runway</b>
+            <span>14 weeks · install 07.08</span>
+          </div>
+          <div class="tl-grid">
+            <div class="tl-row">
+              <div class="tl-lbl">Programming</div>
+              <div class="tl-bar" style="--s:0;--e:18;background:#C6A178"></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-lbl">Schematic</div>
+              <div class="tl-bar" style="--s:15;--e:38;background:#8A6A4F"></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-lbl">Specification</div>
+              <div class="tl-bar" style="--s:32;--e:55;background:#3A3936"></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-lbl">Procurement</div>
+              <div class="tl-bar" style="--s:50;--e:78;background:#94998E"></div>
+            </div>
+            <div class="tl-row">
+              <div class="tl-lbl">Install</div>
+              <div class="tl-bar" style="--s:75;--e:96;background:var(--accent)"></div>
+            </div>
+          </div>
+          <div class="tl-marks">
+            <span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Project timeline</h3>
+          <p>Client-facing Gantt, without the CAD energy. Embeds in email, exports to PDF.</p>
+        </div>
+      </article>
+
+      <!-- 4. Case study -->
+      <article class="example" data-ex="case">
+        <div class="example-meta">
+          <span class="ex-tag">Account Managers · Marketing</span>
+          <span class="ex-dur">~10 min</span>
+        </div>
+        <div class="example-stage case-stage">
+          <div class="case-img">
+            <div class="case-img-placeholder">
+              <span>DLR GROUP · RIVERSIDE</span>
+            </div>
+          </div>
+          <div class="case-body">
+            <div class="case-eb">Case study · 2025</div>
+            <div class="case-h">A studio that flexes for every&nbsp;charrette.</div>
+            <div class="case-stats">
+              <div><b>28k</b><span>sq ft</span></div>
+              <div><b>142</b><span>workpoints</span></div>
+              <div><b>9wk</b><span>install</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Case study page</h3>
+          <p>Real project, polished. Reuses your portfolio imagery. Shareable link.</p>
+        </div>
+      </article>
+
+      <!-- 5. Space storyboard -->
+      <article class="example" data-ex="story">
+        <div class="example-meta">
+          <span class="ex-tag">Designers</span>
+          <span class="ex-dur">~12 min</span>
+        </div>
+        <div class="example-stage story-stage">
+          <div class="story-h"><b>Space storyboard</b><span>4 modes · one day in the office</span></div>
+          <div class="story-row">
+            <div class="story-cell">
+              <div class="sc-art" style="background:linear-gradient(135deg,#E8DFD1,#C6A178)"></div>
+              <b>Focus</b>
+              <span>Enclosed, acoustic, planted</span>
+            </div>
+            <div class="story-cell">
+              <div class="sc-art" style="background:linear-gradient(135deg,#94998E,#3A3936)"></div>
+              <b>Collaborate</b>
+              <span>Writable, open, reconfigurable</span>
+            </div>
+            <div class="story-cell">
+              <div class="sc-art" style="background:linear-gradient(135deg,#8A6A4F,#1F1E1B)"></div>
+              <b>Present</b>
+              <span>Bleacher, tiered, display wall</span>
+            </div>
+            <div class="story-cell">
+              <div class="sc-art" style="background:linear-gradient(135deg,#F0E7D6,#8A6A4F)"></div>
+              <b>Restore</b>
+              <span>Soft, indirect light, lounge</span>
+            </div>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Space storyboard</h3>
+          <p>Communicate intent before a single product is specified. Client buy-in, early.</p>
+        </div>
+      </article>
+
+      <!-- 6. Dashboard -->
+      <article class="example" data-ex="dash">
+        <div class="example-meta">
+          <span class="ex-tag">Leadership · Strategy</span>
+          <span class="ex-dur">~20 min</span>
+        </div>
+        <div class="example-stage dash-stage">
+          <div class="dash-h"><b>Occupancy study · Q1</b><span>Avg of 6 business days</span></div>
+          <div class="dash-heat">
+            <!-- rows of heat -->
+          </div>
+          <div class="dash-legend">
+            <span><i style="background:#ECEAE6"></i>&lt;30%</span>
+            <span><i style="background:#DCE5B0"></i>30–60%</span>
+            <span><i style="background:#C1D72F"></i>60–90%</span>
+            <span><i style="background:#4D4642"></i>&gt;90%</span>
+          </div>
+        </div>
+        <div class="example-cap">
+          <h3>Analytics dashboard</h3>
+          <p>Turn strategy findings into something a C-suite will actually finish reading.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE TRY-IT -->
+<section id="try" class="section section-try">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-num">03</div>
+      <div>
+        <h2 class="h2">The workflow, in three moves.</h2>
+        <p class="sub">No onboarding. If you can write a Slack message, you can brief it.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-n">01</div>
+        <h3>Describe it</h3>
+        <p>Plain English. "A one-pager pitching our services to a 200-person law firm moving offices. Include our case studies, the phased process, and pricing ranges."</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-n">02</div>
+        <h3>Attach context</h3>
+        <p>Drop in brand assets, past decks, client logos, product imagery, a screenshot of a reference you like — or a link to a codebase. More context, better output.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-n">03</div>
+        <h3>Iterate &amp; ship</h3>
+        <p>Comment on any element. Ask for variants. Export to PowerPoint, PDF, or a shareable link. Revise as the client feedback rolls in.</p>
+      </div>
+    </div>
+
+    <div class="try-card">
+      <div class="try-head">
+        <div class="try-dot-row">
+          <span class="tdot"></span><span class="tdot"></span><span class="tdot"></span>
+        </div>
+        <div class="try-ttl">Try a prompt</div>
+      </div>
+      <div class="try-body">
+        <label class="try-label">You say</label>
+        <div class="try-prompts">
+          <button class="tp">A client-facing timeline for a 14-week rollout</button>
+          <button class="tp">A 6-slide deck pitching Unisource to a healthcare&nbsp;group</button>
+          <button class="tp">A finish board comparing three warm-neutral palettes</button>
+          <button class="tp">A one-pager recap of today's programming workshop</button>
+        </div>
+        <label class="try-label">It builds</label>
+        <div class="try-out" id="tryOut">
+          <div class="try-empty">Pick a prompt above ↑</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOT FOR / FOR -->
+<section class="section section-bounds">
+  <div class="wrap">
+    <div class="bounds-grid">
+      <div class="bounds-col bounds-yes">
+        <div class="bounds-k">Great for</div>
+        <ul>
+          <li>Anything currently "I wish I had time to design this"</li>
+          <li>Client-facing deliverables that need to look polished</li>
+          <li>Internal tools nobody's gotten around to building</li>
+          <li>Quick visualizations of data or process</li>
+          <li>Rapid iteration — 5 variants in the time you'd make 1</li>
+        </ul>
+      </div>
+      <div class="bounds-col bounds-no">
+        <div class="bounds-k">Not a replacement for</div>
+        <ul>
+          <li>CET, AutoCAD or other production space planning</li>
+          <li>Photorealistic 3D renders — use your viz partner</li>
+          <li>Final construction documents</li>
+          <li>Your brain. It's a faster hand, not a strategist.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-cta">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-l">
+        <div class="cta-eb">Start here</div>
+        <h2 class="cta-h">Pick one real thing on your plate this week.<br>Brief it. See what comes back.</h2>
+        <p class="cta-sub">A deck you're dreading. A one-pager a client asked for. A tool you've always wanted. The fastest way to get a feel for this is to use it on something real, not a sandbox exercise.</p>
+      </div>
+      <div class="cta-r">
+        <div class="cta-steps">
+          <div><b>1</b><span>Open the studio</span></div>
+          <div><b>2</b><span>Drop in your brand assets once — it'll remember them</span></div>
+          <div><b>3</b><span>Brief the first real thing</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div class="foot-l">
+      <div class="wordmark">
+        <img class="wordmark-logo" src="assets/unisource-logo.jpg" alt="Unisource Solutions" style="background:#fff;padding:4px 6px;border-radius:4px;height:34px">
+        <span class="wordmark-sep"></span>
+        <span class="wordmark-label">Design Studio</span>
+      </div>
+      <p class="foot-sm">An internal field guide. This entire page was built by the tool it describes, in one pass.</p>
+    </div>
+    <div class="foot-r">
+      <div class="foot-meta">
+        <span>Los Angeles</span>
+        <span>·</span>
+        <span>Riverside</span>
+      </div>
+      <div class="foot-meta foot-meta-dim">
+        <span>v1 · April 2026</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// --- ROLE TABS ---
+(function(){
+  const tabs = document.querySelectorAll('.role-tab');
+  const panels = document.querySelectorAll('.role-panel');
+  tabs.forEach(t=>{
+    t.addEventListener('click',()=>{
+      tabs.forEach(x=>x.classList.remove('is-active'));
+      panels.forEach(p=>p.classList.remove('is-active'));
+      t.classList.add('is-active');
+      const role = t.dataset.role;
+      const panel = document.querySelector(`.role-panel[data-role="${role}"]`);
+      if(panel) panel.classList.add('is-active');
+    });
+  });
+})();
+
+// --- DECK AUTOPLAY ---
+(function(){
+  const stage = document.querySelector('.deck-stage');
+  if(!stage) return;
+  const slides = stage.querySelectorAll('.deck-slide');
+  const dots = stage.querySelectorAll('.dot-btn');
+  let i = 0;
+  slides[0].classList.add('is-active');
+  let playing = true;
+  let timer;
+  function go(n){
+    slides.forEach(s=>s.classList.remove('is-active'));
+    dots.forEach(d=>d.classList.remove('is-active'));
+    slides[n].classList.add('is-active');
+    dots[n].classList.add('is-active');
+    i = n;
+  }
+  function tick(){ go((i+1)%slides.length); }
+  function start(){ if(timer) clearInterval(timer); timer=setInterval(tick,2600); }
+  dots.forEach((d,idx)=>d.addEventListener('click',()=>{ go(idx); start(); }));
+  // Pause on hover
+  stage.addEventListener('mouseenter',()=>{ clearInterval(timer); });
+  stage.addEventListener('mouseleave',()=>{ start(); });
+  // IO start when visible
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ start(); } else { clearInterval(timer); }
+    });
+  },{threshold:.2});
+  io.observe(stage);
+})();
+
+// --- FINISH SCHEME SWITCH ---
+(function(){
+  const SCHEMES = {
+    A:[['#C6A178','Oak veneer'],['#3A3936','Charcoal felt'],['#E8DFD1','Linen wool'],['#8A6A4F','Saddle leather'],['#94998E','Sage laminate'],['#1F1E1B','Black ash']],
+    B:[['#A7B4B8','Fog laminate'],['#2D3A41','Deep teal'],['#DDE2E0','Cool linen'],['#4E6872','Slate fabric'],['#8F9FA6','Mist felt'],['#141A1E','Graphite']],
+    C:[['#D8CFBE','Parchment'],['#736B5C','Greige wool'],['#E8E4DB','Oat linen'],['#BAAA94','Taupe laminate'],['#4A453B','Mushroom'],['#26231E','Umber']]
+  };
+  const opts = document.querySelectorAll('.ss-opt');
+  const swatches = document.querySelectorAll('.finish-stage .sw');
+  opts.forEach(o=>o.addEventListener('click',()=>{
+    opts.forEach(x=>x.classList.remove('is-active'));
+    o.classList.add('is-active');
+    const key = o.dataset.sc;
+    const set = SCHEMES[key];
+    swatches.forEach((sw,i)=>{
+      const [col, name] = set[i];
+      sw.style.background = col;
+      const sp = sw.querySelector('span');
+      if(sp) sp.textContent = name;
+      // color label automatically for light swatches
+      const light = /^#([EF][0-9A-F]|D[0-9A-F]|[89A-F][D-F])/i.test(col);
+      if(sp){
+        if(light){ sp.style.color='#1a1a1a'; sp.style.background='rgba(255,255,255,.7)'; }
+        else { sp.style.color='#fff'; sp.style.background='rgba(0,0,0,.55)'; }
+      }
+    });
+  }));
+})();
+
+// --- DASHBOARD HEAT ---
+(function(){
+  const heat = document.querySelector('.dash-heat');
+  if(!heat) return;
+  // seeded pseudo-random for stable look
+  const colors = ['#ECEAE6','#DCE5B0','#C1D72F','#4D4642'];
+  const rng = (s)=>{ return ()=>{ s = (s*9301+49297)%233280; return s/233280; }; };
+  const r = rng(42);
+  const cells = 14*8;
+  let html = '';
+  for(let i=0;i<cells;i++){
+    const v = r();
+    let idx = v<.35?0:v<.7?1:v<.92?2:3;
+    // edges quieter
+    const col = i%14, row = Math.floor(i/14);
+    if(col<2||col>11||row===0||row===7){ if(idx>1) idx--; }
+    html += `<i style="background:${colors[idx]}"></i>`;
+  }
+  heat.innerHTML = html;
+})();
+
+// --- TRY IT PROMPTS ---
+(function(){
+  const OUTPUTS = {
+    'A client-facing timeline for a 14-week rollout':
+`<strong>Building: Client timeline · Acme HQ rollout</strong>
+<span class="tag">plan</span>   horizontal gantt, 5 swimlanes
+<span class="tag">phases</span> programming · schematic · spec · procurement · install
+<span class="tag">markers</span> client check-ins every 2 wks, install date pinned
+<span class="tag">style</span>  Unisource warm palette, muted bars
+<span class="tag">export</span> shareable link + PDF handoff
+→ generating 3 variants: minimal · detailed · milestone-heavy`,
+    'A 6-slide deck pitching Unisource to a healthcare group':
+`<strong>Building: 6-slide pitch deck · Healthcare</strong>
+<span class="tag">slide 1</span>  cover · hospital in focus
+<span class="tag">slide 2</span>  "Designing for the people who deliver care"
+<span class="tag">slide 3</span>  case studies · Kaiser, Sutter (pulled from your portfolio)
+<span class="tag">slide 4</span>  phased delivery · programming → install
+<span class="tag">slide 5</span>  Haworth BIC badge · sustainability stats
+<span class="tag">slide 6</span>  next steps · contact
+<span class="tag">export</span>  editable .pptx · speaker notes included`,
+    'A finish board comparing three warm-neutral palettes':
+`<strong>Building: Finish comparison · 3 palettes</strong>
+<span class="tag">scheme A</span>  warm oak + charcoal felt + linen wool
+<span class="tag">scheme B</span>  walnut + sage laminate + cream leather
+<span class="tag">scheme C</span>  parchment + greige wool + umber
+<span class="tag">view</span>     side-by-side, applied to a sample private office
+<span class="tag">doc</span>      auto-generated finish schedule at bottom
+→ placeholder swatches now, swap real Haworth finishes later`,
+    "A one-pager recap of today's programming workshop":
+`<strong>Building: Workshop recap · Programming session</strong>
+<span class="tag">header</span>   client logo · date · attendees
+<span class="tag">insights</span> 5 bullet findings · hybrid ratio · growth forecast
+<span class="tag">quotes</span>   3 sticky-note-style pulls from participants
+<span class="tag">next</span>     what the design team takes forward
+<span class="tag">tone</span>     confident, visual, not a wall of text
+<span class="tag">share</span>    link sent before the client is back at their desk`
+  };
+  const btns = document.querySelectorAll('.tp');
+  const out = document.getElementById('tryOut');
+  let timer;
+  btns.forEach(b=>{
+    b.addEventListener('click',()=>{
+      btns.forEach(x=>x.classList.remove('is-active'));
+      b.classList.add('is-active');
+      const target = OUTPUTS[b.textContent.trim()] || OUTPUTS[b.innerText.trim()];
+      if(!target) return;
+      typeOut(out, target);
+    });
+  });
+  function typeOut(el, text){
+    if(timer) clearInterval(timer);
+    el.innerHTML = '<div class="typing"></div>';
+    const node = el.querySelector('.typing');
+    let i = 0;
+    // reveal by chunks
+    timer = setInterval(()=>{
+      i += Math.max(3, Math.floor(Math.random()*9));
+      if(i >= text.length){
+        node.innerHTML = text;
+        node.classList.remove('typing');
+        clearInterval(timer);
+        return;
+      }
+      node.innerHTML = text.slice(0, i);
+    }, 18);
+  }
+})();
+
+// --- subtle example stage reveal ---
+(function(){
+  const els = document.querySelectorAll('.example');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.style.opacity='1';
+        e.target.style.transform='none';
+      }
+    });
+  },{threshold:.12});
+  els.forEach((el,i)=>{
+    el.style.opacity='0';
+    el.style.transform='translateY(16px)';
+    el.style.transition=`opacity .6s ease ${i*60}ms, transform .6s cubic-bezier(.2,.7,.2,1) ${i*60}ms, box-shadow .18s ease, border-color .18s ease`;
+    io.observe(el);
+  });
+})();
+
+</script>
+</body>
+</html>
